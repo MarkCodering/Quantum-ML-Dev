@@ -1,0 +1,23 @@
+{
+    "name": "Quanntum ML Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "github.copilot",
+                "docker.vscode-docker"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8888
+    ],
+    "postCreateCommand": "pip install -r requirements.txt && bash ./test.sh"
+}
